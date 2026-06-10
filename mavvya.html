@@ -1,49 +1,197 @@
-mavvya-website/
-│
-├── style.css
-├── index.php
-├── functions.php
-├── header.php
-├── footer.php
-├── page-templates/
-│   └── showcase.php
-├── images/
-│   ├── hero-banner.jpg
-│   ├── product-catalog.jpg
-│   └── logo.png
-/*
-Theme Name: MAVVYA Showcase
-Theme URI: https://github.com/mahienterprisessurat-design/mavvya-website
-Author: Manju
-Description: Handmade Soap & Bath Products showcase theme
-Version: 1.0
-License: GPL
-Text Domain: mavvya
-*/
-<?php get_header(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAVVYA™ - Nature Inspired. Luxury Crafted.</title>
 
-<section class="hero-banner" style="text-align:center; padding:60px; background:#f5f5f5;">
-  <h1>Purely Handmade, Naturally Yours</h1>
-  <p>Discover MAVVYA™ Handmade Soap & Bath Products</p>
-</section>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<section class="product-showcase" style="display:flex; justify-content:center; flex-wrap:wrap; gap:30px; padding:40px;">
-  <div class="product">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/product-catalog.jpg" alt="MAVVYA Soaps" style="width:300px;">
-    <h3>Aromatherapy Range</h3>
-    <p>Relaxing, Stress Relief, Anti Acne & More</p>
-  </div>
-</section>
-
-<section class="newsletter" style="text-align:center; padding:40px; background:#fafafa;">
-  <h2>Join Our Natural Care Community</h2>
-  <?php echo do_shortcode('[mailchimp_form]'); ?>
-</section>
-
-<?php get_footer(); ?>
-<?php
-function mavvya_theme_scripts() {
-    wp_enqueue_style('mavvya-style', get_stylesheet_uri());
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
 }
-add_action('wp_enqueue_scripts', 'mavvya_theme_scripts');
-?>
+
+body{
+background:#F8F4EE;
+color:#111;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.95);
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#1F4D3A;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#111;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url('hero.jpg');
+background-size:cover;
+background-position:center;
+color:#fff;
+}
+
+.hero h1{
+font-size:70px;
+}
+
+.hero p{
+margin:20px 0;
+font-size:20px;
+}
+
+.btn{
+background:#C8A45D;
+padding:14px 30px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+}
+
+.section{
+padding:100px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:#1F4D3A;
+margin-bottom:50px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.product{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.product img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.product-info{
+padding:20px;
+}
+
+.price{
+color:#1F4D3A;
+font-size:22px;
+font-weight:600;
+margin-top:10px;
+}
+
+footer{
+background:#111;
+color:white;
+padding:50px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">MAVVYA™</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>MAVVYA™</h1>
+<p>Nature Inspired. Luxury Crafted.</p>
+
+<a href="https://wa.me/919824780504" class="btn">
+Order on WhatsApp
+</a>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">Our Collection</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="placeholder.jpg">
+<div class="product-info">
+<h3>Rose Mud Soap</h3>
+<div class="price">₹70</div>
+</div>
+</div>
+
+<div class="product">
+<img src="placeholder.jpg">
+<div class="product-info">
+<h3>Coffee Soap</h3>
+<div class="price">₹150</div>
+</div>
+</div>
+
+<div class="product">
+<img src="placeholder.jpg">
+<div class="product-info">
+<h3>Lavender Soap</h3>
+<div class="price">₹70</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+
+<h3>MAVVYA™</h3>
+
+<p>WhatsApp: 9824780504</p>
+
+<p>Instagram: @mavvya2026</p>
+
+<p>Email: mahienterprisessurat@gmail.com</p>
+
+</footer>
+
+</body>
+</html>
