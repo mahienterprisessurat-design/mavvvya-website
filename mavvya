@@ -1,0 +1,49 @@
+mavvya-website/
+│
+├── style.css
+├── index.php
+├── functions.php
+├── header.php
+├── footer.php
+├── page-templates/
+│   └── showcase.php
+├── images/
+│   ├── hero-banner.jpg
+│   ├── product-catalog.jpg
+│   └── logo.png
+/*
+Theme Name: MAVVYA Showcase
+Theme URI: https://github.com/mahienterprisessurat-design/mavvya-website
+Author: Manju
+Description: Handmade Soap & Bath Products showcase theme
+Version: 1.0
+License: GPL
+Text Domain: mavvya
+*/
+<?php get_header(); ?>
+
+<section class="hero-banner" style="text-align:center; padding:60px; background:#f5f5f5;">
+  <h1>Purely Handmade, Naturally Yours</h1>
+  <p>Discover MAVVYA™ Handmade Soap & Bath Products</p>
+</section>
+
+<section class="product-showcase" style="display:flex; justify-content:center; flex-wrap:wrap; gap:30px; padding:40px;">
+  <div class="product">
+    <img src="<?php echo get_template_directory_uri(); ?>/images/product-catalog.jpg" alt="MAVVYA Soaps" style="width:300px;">
+    <h3>Aromatherapy Range</h3>
+    <p>Relaxing, Stress Relief, Anti Acne & More</p>
+  </div>
+</section>
+
+<section class="newsletter" style="text-align:center; padding:40px; background:#fafafa;">
+  <h2>Join Our Natural Care Community</h2>
+  <?php echo do_shortcode('[mailchimp_form]'); ?>
+</section>
+
+<?php get_footer(); ?>
+<?php
+function mavvya_theme_scripts() {
+    wp_enqueue_style('mavvya-style', get_stylesheet_uri());
+}
+add_action('wp_enqueue_scripts', 'mavvya_theme_scripts');
+?>
